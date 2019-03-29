@@ -58,16 +58,16 @@ std::string home() //Home function. Every path that ends should lead here
 		{
       std::cout << "You have opened the chest!\n";
       std::cout << "Inside there is another key with a letter.\n";
-			std::cout << "=========================\n";
+			std::cout << "===================================================================\n";
 			std::cout << "It reads...\n";
 			std::cout << "Congratulations! You have completed the Quest and opened the chest.\n";
 			std::cout << "You are truly magnificent!\n";
 			std::cout << "Inside this chest is a key, a key to a kingdom that belongs to you\n";
 			std::cout << "All hail " + name + " the Magnificent you are truly great\n";
 			std::cout << "End of letter\n";
-			std::cout << "=========================\n";
+			std::cout << "===================================================================\n";
 			std::cout << "Here is your Kingdom rule with great Authority!\n";
-			std::cout << ""; //Temporary will put a kingdom of characters
+			std::cout << "  "; //Temporary will put a kingdom of characters
 		} else { //If the correct keys weren't found they need to keep looking
 			std::cout << "\nThats not it keep looking.\n";
       beginning();
@@ -83,11 +83,13 @@ int main() //The main function plays everything out
 	{
 		name = "User1";
 	}
+	std::cout << "===============================================================================\n";
   std::cout << "Hello, " + name + "\n";
   std::cout << "This is a choose your own adventure game.\n";
   std::cout << "If you want to win, you must find all three keys and come back here to the Home.\n";
   std::cout << "Once you have all the keys you can unlock this chest.\n";
   std::cout << "Good luck and be safe!\n\n";
+	std::cout << "===============================================================================\n";
   
 	home();
   beginning();
