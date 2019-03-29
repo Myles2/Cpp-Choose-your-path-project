@@ -14,21 +14,22 @@ std::string beginning() //The beginning path should start the game and lead to t
 		std::cout << "1) Cave \n"; // Path for Myles
 		std::cout << "2) Fabian path \n"; // Path Fabian
 		std::cout << "3) Marcos path \n"; // Path for Marcos
-			std::cin >> path;
-			if(path == 1) {
-				std::cout << "Entered Cave\n";
-				return 0;
-			} else if (path == 2) {
-				std::cout << "Entered Fabian path\n";
-				return 0;
-			} else if (path == 3) {
-				std::cout << "Entered Marcos path\n";
-				return 0;
-			} else {
-				std::cin.clear();
-        std::cin.ignore();
-        std::cout << "Invalid try again.\n";
-			}
+		std::cin >> path;
+		if(path == 1) {
+			std::cout << "Entered Cave\n";
+			cave();
+			return 0;
+		} else if (path == 2) {
+			std::cout << "Entered Fabian path\n";
+			return 0;
+		} else if (path == 3) {
+			std::cout << "Entered Marcos path\n";
+			return 0;
+		} else {
+			std::cin.clear();
+			std::cin.ignore();
+			std::cout << "Invalid try again.\n";
+		}
 		return beginning();
 	}
 
@@ -38,12 +39,20 @@ std::string home() //Home function. Every path that ends should lead here
 		std::cout << "=======================\n";
     std::cout << "Do you have the 3 keys?\n";
 		std::cout << "=======================\n";
+		start:
 		std::cout << "Key 1: \n";
 		std::cin >> key1;
 		std::cout << "Key 2: \n";
 		std::cin >> key2;
 		std::cout << "Key 3: \n";
 		std::cin >> key3;
+		if(std::cin.fail()) 
+      {
+        std::cout << "Not an option! Only numbers!" << std::endl;
+        std::cin.clear();
+        std::cin.ignore();
+        goto start;
+      }
 
 		if (key1 == 3016 && key2 == 6271 && key3 == 4001) //If all the keys are found run the End game
 		{
@@ -76,9 +85,9 @@ int main() //The main function plays everything out
 	}
   std::cout << "Hello, " + name + "\n";
   std::cout << "This is a choose your own adventure game.\n";
-  std::cout << "If you want to win, you must find all three keys and come back here to the beginning\n";
+  std::cout << "If you want to win, you must find all three keys and come back here to the Home.\n";
   std::cout << "Once you have all the keys you can unlock this chest.\n";
-  std::cout << "Good luck and be safe!\n\n\n";
+  std::cout << "Good luck and be safe!\n\n";
   
 	home();
   beginning();

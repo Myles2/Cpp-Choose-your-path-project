@@ -2,6 +2,7 @@
 #define PATHS_H
 #include <iostream>
 
-std::string cave();
+void cave();
+std::string home();
 
 #endif
