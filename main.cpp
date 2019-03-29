@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <iostream>
+#include "Paths.h"
 
 int key1;
 int key2;
@@ -8,24 +9,27 @@ std::string name;
 
 std::string beginning() //The beginning path should start the game and lead to the seperate files with their own paths but lead back to home hopefully after finding the key.
 	{
-    int path = 0;
+    int path;
     std::cout << "\nHere are your paths to find the keys, what will you choose, where could they be?\n\n";
-		std::cout << "1) Myles path \n"; // Path for Myles
+		std::cout << "1) Cave \n"; // Path for Myles
 		std::cout << "2) Fabian path \n"; // Path Fabian
 		std::cout << "3) Marcos path \n"; // Path for Marcos
-		while(path != 1 || path != 2 || path != 3) 
-		{
 			std::cin >> path;
-			if(path == 1 || path == 2 || path == 3) {
-				std::cout << "Path taken\n";
+			if(path == 1) {
+				std::cout << "Entered Cave\n";
+				return 0;
+			} else if (path == 2) {
+				std::cout << "Entered Fabian path\n";
+				return 0;
+			} else if (path == 3) {
+				std::cout << "Entered Marcos path\n";
 				return 0;
 			} else {
 				std::cin.clear();
         std::cin.ignore();
         std::cout << "Invalid try again.\n";
 			}
-		}
-		return 0;
+		return beginning();
 	}
 
 std::string home() //Home function. Every path that ends should lead here
