@@ -1,3 +1,13 @@
+#include <iostream>
+#include <stdlib.h>
+#include "Paths.h"
+
+void fabian()
+{
+  std::cout << "This is a path";
+}
+
+
 /* Create a path you want to create and hide the key 
 somewhere in the path for the user to find also change 
 the name to this file to whatever you want the theme to 

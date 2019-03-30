@@ -3,6 +3,7 @@
 #include <iostream>
 
 void cave();
-std::string home();
-
+void home();
+void fabian();
+void marcos();
 #endif

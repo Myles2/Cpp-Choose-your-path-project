@@ -4,7 +4,7 @@
 #include "Paths.h"
 
 int first_path;
-int second_second_path;
+int second_second_path = 2;
 
 void cave_end() 
 {
