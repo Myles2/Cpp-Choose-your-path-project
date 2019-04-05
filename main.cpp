@@ -2,29 +2,29 @@
 #include <iostream>
 #include "Paths.h"
 
-int key1;
-int key2;
-int key3;
-int pass = 0;
-std::string name; 
+int key1; // These keys are
+int key2; // for winning the
+int key3; // game.
+int pass = 0; //Variable checks if you won the game.
+std::string name; //Holds users name.
 
 void beginning() //The beginning path should start the game and lead to the seperate files with their own paths but lead back to home hopefully after finding the key.
 	{
-    int path;
+    int path; //Variable for the first path to be chosen.
     std::cout << "\nHere are your paths to find the keys, what will you choose, where could they be?\n\n";
-		std::cout << "1) Cave \n"; // Path for Myles
-		std::cout << "2) Fabian path \n"; // Path Fabian
-		std::cout << "3) Marcos path \n"; // Path for Marcos
-		std::cin >> path;
-		if(path == 1) {
+		std::cout << "1) Cave \n";
+		std::cout << "2) Fabian path \n";
+		std::cout << "3) Village \n";
+		std::cin >> path;       //Holds path chosen.
+		if(path == 1) {         //Cave Path.
 			std::cout << "Entered Cave\n";
 			cave();
-		} else if (path == 2) {
+		} else if (path == 2) { // Path.
 			std::cout << "Entered Fabian path\n";
 			fabian();
-		} else if (path == 3) {
-			std::cout << "Entered Marcos path\n";
-			marcos();
+		} else if (path == 3) { //Village Path.
+			std::cout << "Entered Village\n";
+			village();
 		} else {
 			std::cin.clear();
 			std::cin.ignore();
@@ -54,7 +54,7 @@ void home() //Home function. Every path that ends should lead here
         goto start;
       }
 
-		if (key1 == 3016 && key2 == 6271 && key3 == 4001) //If all the keys are found run the End game
+		if (key1 == 3016 && key2 == 6271 && key3 == 4001) //If all the keys are found you Win!
 		{
 
       std::cout << "You have opened the chest!\n";
@@ -108,10 +108,10 @@ int main() //The main function plays everything out
   std::cout << "Good luck and be safe!\n\n";
 	std::cout << "===============================================================================\n";
   
-	home();
+	home(); //This is to check if the won already, if so it ends the game.
 	if(pass == 1) {
 		return 0;
 	}
-  beginning();
+  beginning(); //This runs to give the option of the paths you want to take.
 	return 0;
 }

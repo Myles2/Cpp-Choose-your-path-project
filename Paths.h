@@ -5,5 +5,6 @@
 void cave();
 void home();
 void fabian();
-void marcos();
+void village();
+extern std::string name;
 #endif

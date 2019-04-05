@@ -15,7 +15,7 @@ be like dungeon, sewer, village, space_ship
 
 Also you can make the key whatever you want but let myles know so he can change 
 the keys that must be found in the home function or if you want you can use the
-default which is: Key 3 == 4001
+default which is: Key 1 == 3016
 
 If you find a bug try to fix it or leave a note so that we can watch out for it and
 hopefully fix it

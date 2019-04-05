@@ -3,15 +3,15 @@
 #include <conio.h>
 #include "Paths.h"
 
-int first_path;
-int second_second_path = 2;
+int first_path; //This variable keeps track of the first path taken.
+int second_second_path = 2; //This variable defaults to a specific path, but can be changed if someone makes different choices beforehand.
 
-void cave_end() 
+void cave_end() //This function runs after the first_path in the cave function and has multiple endings.
 {
-int bear1;
-int bear2;
-int bear3;
-int hang;
+int bear1; //These variables hold the reuslts in the  
+int bear2; //path that was chosen by the
+int bear3; //second_second_path. But only the case that was chosen.
+int hang;  //This variable is for a choice thats not a path but can give you a hint depending on your choice.
 switch(second_second_path)
   {
     case 1:
@@ -210,9 +210,9 @@ switch(second_second_path)
   }
 }
 
-void cave()
+void cave() //This function is for going into the cave.
 {
-  int side;
+  int side; //Holds the users choice of which side of the cave they go.
   std::cout << "=====================================================================================\n" << std::endl;
   std::cout << "It's dark and eerie" << std::endl;
   std::cout << "You immediately regret your decision, but you know the key could possibly be in here" << std::endl;
@@ -233,7 +233,7 @@ void cave()
     std::cin.ignore();
     goto retry;
   }
-  if(side == 1) 
+  if(side == 1) //This runs if you chose to go Left.
   {
     std::cout << "==================================================\n" << std::endl;
     std::cout << "You decided to go to the Left" << std::endl;
@@ -245,7 +245,7 @@ void cave()
     std::cout << "==================================================\n" << std::endl;
     first_path = 1;
   } 
-  else if (side == 2) 
+  else if (side == 2) //This runs if you chose to go Right.
   {
     std::cout << "====================================================\n" << std::endl;
     std::cout << "You decided to go to the Right" << std::endl;
@@ -262,12 +262,12 @@ void cave()
     goto retry;
   }
 
-  int bear;
-  int chest;
+  int bear;  //Variable for case1.
+  int chest; //Variable for case2.
 
-  switch(first_path) 
+  switch(first_path) //Depending on what you chose before, these cases will run accordingly.
   {
-    case 1:
+    case 1: //If you went Left you get these choices.
       std::cout << "1) Do you hide?" << std::endl;
       std::cout << "2) Do you run?" << std::endl;
       back:
@@ -314,7 +314,7 @@ void cave()
         goto back;
       }
       break;
-    case 2:
+    case 2: //If you went Right you get these choices.
       std::cout << "1) Open chest" << std::endl;
       std::cout << "2) Don't open" << std::endl;
       std::cout << "====================================================\n" << std::endl;
@@ -366,14 +366,3 @@ void cave()
       break;
   }
 }
-
-
-/*Also you can make the key whatever you want but let myles know so he can change 
-the keys that must be found in the home function or if you want you can use the
-default which is: Key 3 == 4001
-
-If you find a bug try to fix it or leave a note so that we can watch out for it and
-hopefully fix it
-
-Make sure to export this function so that it can be used in the main function
-Good luck, if you need help just ask let's do this! Happy coding!*/
